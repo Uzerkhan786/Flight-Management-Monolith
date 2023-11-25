@@ -8,7 +8,7 @@ const createFlightController=async(req,res)=>{
             message:'Successfully created the flight',
             response:Flight,
             error:{},
-            success:false,
+            success:true,
 
         })
     } catch (error) {
@@ -30,8 +30,7 @@ const updateFlightController=async(req,res)=>{
             message:'Successfully updated  the flight',
             response:Flight,
             error:{},
-            success:false,
-
+            success:true,
         })
     } catch (error) {
         res.status(401).json({
@@ -53,7 +52,7 @@ const getOneFlightController=async(req,res)=>{
             message:'Successfully get  the particular  flight',
             response:Flight,
             error:{},
-            success:false,
+            success:true,
 
         })
     } catch (error) {
@@ -76,7 +75,7 @@ const deleteFlightController=async(req,res)=>{
             message:'Successfully deleted the flight',
             response:Flight,
             error:{},
-            success:false,
+            success:true,
 
         })
     } catch (error) {
@@ -98,7 +97,7 @@ const getAllFlightController=async(req,res)=>{
             message:'Successfully fetched all the flights',
             response:Flight,
             error:{},
-            success:false,
+            success:true,
 
         })
     } catch (error) {

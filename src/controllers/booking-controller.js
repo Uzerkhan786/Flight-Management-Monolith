@@ -8,8 +8,7 @@ const createBookingController=async(req,res)=>{
             message:'Successfully done the booking',
             response:booking,
             error:{},
-            success:false,
-
+            success:true,
         })
     } catch (error) {
         res.status(401).json({
@@ -30,7 +29,7 @@ const updateBookingController=async(req,res)=>{
             message:'Successfully updated the booking of user',
             response:booking,
             error:{},
-            success:false,
+            success:true,
 
         })
     } catch (error) {
@@ -53,8 +52,7 @@ const getOneBookingController=async(req,res)=>{
             message:'Successfully get  the booking',
             response:booking,
             error:{},
-            success:false,
-
+            success:true,
         })
     } catch (error) {
         res.status(401).json({
@@ -76,7 +74,7 @@ const deleteBookingController=async(req,res)=>{
             message:'Successfully deleted the booking',
             response:booking,
             error:{},
-            success:false,
+            success:true,
 
         })
     } catch (error) {
@@ -98,7 +96,7 @@ const getAllBookingController=async(req,res)=>{
             message:'Successfully get all  the booking',
             response:booking,
             error:{},
-            success:false,
+            success:true,
 
         })
     } catch (error) {

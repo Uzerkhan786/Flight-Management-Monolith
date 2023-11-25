@@ -3,5 +3,7 @@ module.exports={
     cityRepository:require('./city-repository'),
     crudRepository:require('./crud-repository'),
     flightRepository:require('./flight-repository'),
-    bookingRepository:require('./booking-repository')
+    bookingRepository:require('./booking-repository'),
+    airplaneRepository:require('./airplane-repository'),
+    airportRepository:require('./airport-repository')
 }

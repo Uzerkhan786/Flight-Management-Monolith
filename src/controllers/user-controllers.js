@@ -1,7 +1,6 @@
 const {userService}=require('../services/index');
 const user=new userService();
 
-   
      const  createUserController=async(req,res)=>
      {
         try {
