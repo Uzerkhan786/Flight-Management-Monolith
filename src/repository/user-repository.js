@@ -1,11 +1,11 @@
 const{user}=require('../models/index');
 
 class userRepository{
-
+     
     async createUser(data){
         try {
             const User=await user.create(data);
-            return User
+            return User;
         } catch (error) {
             throw{error:'something went wrong'}
         }
@@ -22,9 +22,13 @@ class userRepository{
         
     }
 
-    async getUserDelete(data){
+    async getUserDelete(id){
         try {
-            const User=await user.destroy(data);
+            const User=await user.destroy({
+                where:{
+                    id:id
+                }
+            });
             return User;
         } catch (error) {
             throw{error:'something went wrong'}
@@ -57,6 +61,38 @@ class userRepository{
         }
         
     }
+
+
+    //get an  email for signn
+
+
+    async getUserEmail(data){
+        try {
+            const User=await user.findOne({
+                where:{
+                    email:data.email
+                }
+            })
+            return User
+        } catch (error) {
+            throw {error:'it is error'}
+        }
+    }
+
+    //GET BY ID
+
+    async getUserId(data){
+        try {
+            const User=await user.findByPk(data)
+            return User;
+        } catch (error) {
+            throw {error:'it is error'}
+        }
+    }
+
+
+
+    
 
 
 }

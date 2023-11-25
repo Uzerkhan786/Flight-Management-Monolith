@@ -106,14 +106,58 @@ const user=new userService();
            })
        }
     }
-    
 
 
 
+    //sigin controller
+
+
+
+   const signin=async (req,res)=>{
+    try {
+        const User=await user.userServiceSignIn(req.body);
+
+        res.status(200).json({
+            response:User,
+            message:`Successfully signed in the   user`,
+            success:true
+        })
+    } catch (error) {
+        
+        res.status(401).json({
+            response:{},
+            message:'Unable to get the user',
+            success:false
+        })
+    }
+   }
+
+   //GET HEADERS
+
+   const authenticate=async(req,res)=>{
+            try {
+                const headers=req.headers['x-access-token'];
+                const User=await user.authenticateService(headers);
+
+               return  res.status(200).json({
+                    response:'Correct User',
+                    message:`Successfully authenticated the  user`,
+                    success:true
+                })
+            } catch (error) {       
+                res.status(401).json({
+                    response:{},
+                    message:'Unable to authenticate the user',
+                    success:false
+                })
+            }
+   }
 module.exports={
     createUserController,
     getAllUserController,
     getUserDeleteController,
     getUserUpdateController,
-    getUserController
+    getUserController,
+    signin,
+    authenticate
 }
