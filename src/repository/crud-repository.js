@@ -7,13 +7,23 @@ class CrudRepository{
       const createcrud=await this.model.create(data);
       return createcrud;
   }
+
+  async update(data,id){
+       
+    const createcrud=await this.model.update(data,{
+        where:{
+            id:id
+        }
+    });
+    return createcrud;
+}
   async getOne(id){
-      const getone=await this.modal.findByPk(id)
+      const getone=await this.model.findByPk(id)
       return getone;
   }
 
   async getDelete(modelId){
-      const deleteone=await this.modal.destroy({
+      const deleteone=await this.model.destroy({
           where:{
               id:modelId
           }

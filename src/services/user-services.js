@@ -63,8 +63,6 @@ class userService{
 
 
     //SIGN IN LOGIC
-
-
     async userServiceSignIn(data){
               try {
                 const user=await this.user.getUserEmail(data);
