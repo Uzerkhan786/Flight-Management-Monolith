@@ -98,12 +98,11 @@ class userService{
                        message:'Please enter the correct token';
                        throw error
                 }
-                return true;
+                return user;
             } catch (error) {
                 throw error
             }
     }
-
 
                  //  # CRREATE AND VERIFY TOKEN
     createToken(data){
@@ -115,10 +114,7 @@ class userService{
 
         const a=jwt.verify(token,'secret');
         return a;
-    }
-
-
-    
+    }   
 }
 
 module.exports=userService

@@ -1,10 +1,10 @@
 const {userController,bookingController,flightController}=require('../../controllers/index');
-
+const{check}=require('../../middlewares/auth-middle')
 const express=require('express');
 const router=express.Router();
 //AUTHENTICATION ROUTES
 router.post('/user/signup',userController.createUserController);
-router.post('/user/sigin',userController.signin);
+router.post('/user/signin',userController.signin);
 router.patch('/user/:id',userController.getUserUpdateController);
 router.delete('/user/:id',userController.getUserDeleteController);
 router.get('/user/:id',userController.getUserController);
@@ -21,7 +21,7 @@ router.get('/flight',flightController.getAllFlightController);
 
 
 //BOOKING ROUTES
-router.post('/booking',bookingController.createBookingController);
+router.post('/booking',check,bookingController.createBookingController);
 router.patch('/booking/:id',bookingController.updateBookingController);
 router.delete('/booking/:id',bookingController.deleteBookingController);
 router.get('/booking/:id',bookingController.getOneBookingController);

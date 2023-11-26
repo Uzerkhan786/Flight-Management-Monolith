@@ -8,7 +8,7 @@ class CrudRepository{
       return createcrud;
   }
 
-  async update(data,id){
+  async updated(id,data){
        
     const createcrud=await this.model.update(data,{
         where:{
